@@ -5,9 +5,9 @@ use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::Router;
+use example_prometheus_rust::metrics;
 use prometheus_client::encoding::text::encode;
 use prometheus_client::registry::Registry;
-use rust_example_export::metrics;
 use std::sync::Arc;
 use tokio::sync::Mutex;
 
