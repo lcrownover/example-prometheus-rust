@@ -11,9 +11,9 @@ pub enum ServiceStateLabel {
 
 #[derive(Clone, Debug, Hash, PartialEq, Eq, EncodeLabelSet)]
 pub struct ServiceResetLabels {
-    pub owner: String,
-    pub service_name: String,
-    pub service_state: ServiceStateLabel,
+    owner: String,
+    service_name: String,
+    service_state: ServiceStateLabel,
 }
 
 #[derive(Debug)]
@@ -30,7 +30,7 @@ impl ServiceResetMetrics {
         let metric = Family::default();
         return Self { name, help, metric }.gather();
     }
-    pub fn gather(self) -> Self {
+    fn gather(self) -> Self {
         // go do the thing to get the value
         let resets_value = 8;
         let owner = String::from("Lucas");
